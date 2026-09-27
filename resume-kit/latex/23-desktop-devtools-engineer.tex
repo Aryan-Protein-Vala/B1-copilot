@@ -1,0 +1,90 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Desktop \& Developer Tools Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+Desktop and developer-tools engineer: a Tauri 2/Rust desktop AI that operates the OS via a ghost cursor, an offline Rust TUI system cleaner distributed with a one-line curl installer and enterprise fleet console, a native macOS widget with hardware-bound licensing, and a 15-tool zero-trust browser WASM toolkit. I build tools people install on their own machines  ---  and the distribution, licensing, and ops around them.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Desktop: Tauri 2 (Rust plugins: hotkeys, screen capture, input injection, secure storage) \,·\, Windows Graphics Capture \,·\, macOS Core Graphics \,·\, Python/PyQt6 \,·\, PyInstaller \,·\, native-feel UI patterns
+\item CLIs \& TUIs: Rust TUIs \,·\, terminal UX \,·\, one-line curl/PowerShell installers \,·\, HWID-bound licensing \,·\, fleet management consoles
+\item Performance: zero-latency capture paths \,·\, \textasciitilde{}35 MB RSS budgets \,·\, multi-threaded WebAssembly (COOP/COEP + SharedArrayBuffer) \,·\, ffmpeg.wasm \,·\, tesseract.js
+\item Dev Tools: Chrome extensions (MV3) \,·\, MCP servers \,·\, plugin systems with hooks \,·\, secret detection \,·\, audit trails
+\item Languages: Rust \,·\, TypeScript \,·\, Python \,·\, Go \,·\, SQL \,·\, Docker, GitHub Actions
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{MYLO OS  ---  Desktop AI Operator (Tauri 2 / Rust)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built a Tauri 2 desktop agent that overlays a transparent control layer above any running application (IDE, Blender, Excel, terminal) using zero-latency Windows Graphics Capture + macOS Core Graphics, and executes spoken tasks with a ghost cursor  ---  holding \textasciitilde{}35 MB RSS.
+\item Wrote the Rust plugin suite: global hotkeys (hotkey.rs), screen capture (screen\_capture.rs), human-paced input injection (input\_injector.rs), secure credential storage (storage.rs), PII masking, and tier gating; OS-level stealth (WDA\_EXCLUDEFROMCAPTURE / NSWindow.sharingType) hides the overlay from screen capture, share, and recording.
+\item Tech: Rust, Tauri 2, WGC, Core Graphics, Cloudflare Workers, Next.js  ---  github.com/Aryan-Protein-Vala/MyloOS \,·\, mylo-frontend.vercel.app
+\end{itemize}
+\textbf{Prometheus  ---  Offline OS Cleaner + Fleet Console (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built a 100\% offline, zero-telemetry Rust TUI: deep-flush scans finding hidden caches, phantom duplicates, and ad-trackers across thousands of files in milliseconds; HWID-bound licensing; centralized Enterprise Fleet Command Center; one-line curl installer  ---  live at prometheus-cleaner.vercel.app.
+\item Tech: Rust, TUI, Next.js, GitHub Actions  ---  github.com/Aryan-Protein-Vala/Prometheus
+\end{itemize}
+\textbf{Snag  ---  macOS Floating Productivity Widget}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built a native macOS widget in Python + PyQt6 (PyInstaller-packaged): global-hotkey summon, 10-most-recent screenshots hub, real-time downloads tracker, rolling 15-item clipboard history, pinned snippets, and drag-and-drop of files/text directly into Finder, Chrome, or Slack.
+\item Tech: Python, PyQt6, PyInstaller, Next.js, Supabase  ---  github.com/Aryan-Protein-Vala/Snag
+\end{itemize}
+\textbf{CORTEX  ---  Desktop Memory App + MCP Server}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the Tauri desktop surface: live 3D WebGL memory graph (nodes pulse on access, dim as they decay) plus an MCP server so any MCP-capable editor/agent reads the same memory  ---  Docker Compose distribution for the SurrealDB/Qdrant/Redis stack.
+\item Tech: Rust, Tauri, SurrealDB, Qdrant, Docker  ---  github.com/Aryan-Protein-Vala/CORTEX
+\end{itemize}
+\textbf{ToolGrid  ---  15-Tool Browser WASM Toolkit}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built 15 pro tools that run 100\% client-side with zero uploads: multi-threaded ffmpeg.wasm video compression, in-browser AI background removal, Tesseract OCR, 4K mockup canvas, batch SVG vectorizer, and a Manifest V3 ad-blocker generator  ---  behind COOP/COEP + SharedArrayBuffer.
+\item Tech: Astro, WebAssembly, Canvas, JSZip  ---  github.com/Aryan-Protein-Vala/Micro-Tools
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

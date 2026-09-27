@@ -1,0 +1,84 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Network \& Protocol Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+Network and protocol engineer with end-to-end experience from silicon to application: custom binary frame protocols over raw TCP with 8 MB socket buffers, QUIC transport for WAN, mDNS zeroconf discovery, BLE GATT protocol design with MTU negotiation and fragmentation, Delay-Tolerant Networking with spray-and-wait routing, and WebSocket fabrics with sub-millisecond fan-out.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Protocols: TCP/IP (TCP\_NODELAY, socket buffer tuning, Nagle) \,·\, custom binary framing ([lengthPrefix][binaryFrame]) \,·\, QUIC \,·\, WebSockets (RFC 6455) \,·\, BLE GATT (MTU negotiation, CCCD, onCharacteristicWrite) \,·\, mDNS/ZeroConf (ZeroConf \_tcp services) \,·\, DTN \& opportunistic routing (spray-and-wait)
+\item Crypto in transit: E2EE (AES-256-GCM, ChaCha20-Poly1305) \,·\, Noise Protocol Framework \,·\, P-256 ECDH + HKDF \,·\, ECDSA signatures \,·\, replay-attack defense (Bloom-filter dedup)
+\item Architecture: P2P + relay/signaling hybrids \,·\, LAN auto-bridging (mDNS intercept) \,·\, mesh networking \,·\, relay/hub patterns \,·\, Pub/Sub fan-out \,·\, 24/7 service operations (health endpoints, keep-alive, cold-start avoidance)
+\item Languages: Go \,·\, Rust \,·\, Swift \,·\, Kotlin \,·\, Python \,·\, C (background) \,·\, Linux networking
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{Aether  ---  Custom P2P Transfer Protocol (Go)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed a protocol stack that saturates physical links: raw TCP multiplexer with persistent TCP\_NODELAY sockets, 8 MB OS socket buffers, and a [lengthPrefix][binaryFrame] protocol carrying 16 MB parallel chunks  ---  modeled 110–115 MB/s on Gigabit, 700–1,100 MB/s on 10G (71 MB/s measured peak).
+\item Built the discovery + handoff layer: an invisible \_aether.\_tcp mDNS ZeroConf signature broadcasts locally; on detecting a same-room peer, the engine intercepts the relayed connection and establishes a direct LAN bridge  ---  transfers then run above ISP ceilings without public IP routing.
+\item Tech: Go, raw TCP, QUIC, mDNS/ZeroConf, AES-256-GCM  ---  github.com/Aryan-Protein-Vala/AetherNet
+\end{itemize}
+\textbf{Astral  ---  BLE Mesh Protocol + DTN Routing (Rust/iOS/Android)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed a BLE payment protocol that defeats standard BLE payload limits: dynamic MTU negotiation up to 512 B, then a sequential queuing system over onCharacteristicWrite for zero-packet-loss fragmentation of 200–500 B encrypted payloads  ---  including a manual CCCD (0x2902) write fix that resolved the Android "merchant did not respond" bug breaking iOS peripheral ACKs.
+\item Built the Delay-Tolerant core: every phone becomes a roaming router using spray-and-wait opportunistic routing  ---  messages hop over Bluetooth as devices pass, E2E-encrypted (P-256 ECDH + ChaCha20-Poly1305) so intermediate carriers can't read them, and reconcile to a ledger when either endpoint reconnects.
+\item Tech: Rust, Swift, Kotlin, UniFFI, BLE GATT, Noise Protocol, DTN  ---  github.com/Aryan-Protein-Vala/Astral-Offline \,·\, github.com/Aryan-Protein-Vala/Astral-Network
+\end{itemize}
+\textbf{CLAIM/05  ---  WebSocket Fabric for 25M-Cell Real-Time State}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the WebSocket fabric in Go (Gorilla, hub pattern, concurrent channel hubs): persistent bidirectional sessions, delta-only updates over Redis Pub/Sub (grid\_updates channel) fanned out to all connected clients in sub-millisecond, SETNX atomic locking for conflict-free writes, and reload-safe token reconnection.
+\item Tech: Go, Gorilla WebSockets, Redis  ---  github.com/Aryan-Protein-Vala/Grid-Game \,·\, live: multiplayer-grid-game-theta.vercel.app
+\end{itemize}
+\textbf{VĀYU  ---  WebSocket Latency Protocol Tuning}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Profiled a production WebSocket path and found the protocol-level bug: missing TCP\_NODELAY on uvicorn's websockets path let Nagle + delayed ACK add \textasciitilde{}42 ms per round trip  ---  fixed at the socket layer and verified 44 ms → 1.5 ms (96\% reduction) with a scripted 10-query audit harness.
+\item Tech: Python, FastAPI, Uvicorn  ---  github.com/Aryan-Protein-Vala/vayu-voice-rag
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

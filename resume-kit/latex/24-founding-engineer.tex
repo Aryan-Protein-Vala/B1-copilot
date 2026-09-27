@@ -1,0 +1,95 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Founding Engineer (0 → 1)}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+Founding engineer who takes ideas from blank repo to live, monetized product solo  ---  8+ shipped products with real users, live domains, and payment integrations: a multi-tenant SAP copilot SaaS, a two-sided SaaS affiliate marketplace, a GST compliance suite for CAs, a consumer AI agent, and a desktop OS operator with a 3-tier paid plan. Full-stack, full-scope: architecture, backend, frontend, payments, security, distribution, and the business model.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item 0→1 Execution: architecture decisions \,·\, MVP scoping \,·\, solo full-stack builds (2–31k LOC products) \,·\, shipping cadence (8+ products shipped) \,·\, post-launch iteration
+\item Stack: Next.js 14–16 \,·\, React 19 \,·\, TypeScript \,·\, FastAPI (Python) \,·\, Go \,·\, Rust (Tauri 2) \,·\, Supabase/PostgreSQL \,·\, Firebase \,·\, Redis \,·\, Docker
+\item Monetization: Razorpay (UPI, subscriptions, deposits, payouts) \,·\, Stripe \,·\, PayPal \,·\, prepaid credit wallets \,·\, freemium + BYOK tiers \,·\, 3-tier SaaS pricing (\$14.99/\$49.99) \,·\, platform-fee marketplaces (2–5\%)
+\item Growth: viral share loops (edge OG images) \,·\, Chrome extension distribution \,·\, one-line installers \,·\, SEO/landing pages \,·\, 95+ Lighthouse
+\item Ops: Vercel/Render/Firebase deploys \,·\, GitHub Actions CI + keep-alives \,·\, RLS \& security hardening \,·\, audit logging
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{SELECTED SHIPPED PRODUCTS}
+\textbf{MYLO OS  ---  Desktop AI Operator (product + pricing + edge infra)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Took a "Jarvis-like desktop agent" from concept to product: Tauri 2 + Rust app (ghost cursor, screen understanding, background headless-Chrome agents), marketing site (mylo-frontend.vercel.app), Cloudflare edge proxy for managed tiers (license validation + server-side key injection), and a 3-tier monetization model (BYOK Free / \$14.99 Pro / \$49.99 Elite) with model gating and token budgets  ---  including privacy policy, ToS, and support surfaces.
+\item Tech: Rust, Tauri 2, Cloudflare Workers, Next.js  ---  github.com/Aryan-Protein-Vala/MyloOS
+\end{itemize}
+\textbf{Black Index  ---  Two-Sided SaaS Affiliate Marketplace (31k+ LOC)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the complete platform solo: founder listings with hybrid commissions (upfront + recurring \%), seller ("Warlord") referral links and earnings dashboards, attribution tracking, and the settlement engine (14 payment-provider webhooks → atomic conversion RPC → 30-day escrow → RazorpayX/UPI payouts)  ---  plus fraud controls (self-referral, velocity, disputes) and an admin console.
+\item Tech: Next.js, Supabase, Razorpay/Stripe  ---  github.com/Aryan-Protein-Vala/Black-Index
+\end{itemize}
+\textbf{B1 Copilot  ---  Multi-Tenant SAP Copilot SaaS}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Took an enterprise AI copilot to SaaS shape: white-label theming, 3-tier RBAC (Super Admin → Partner → Client), tiered plans (Pilot/Read-Only/Read-Write/Migration), per-tenant quotas, partner data-migration tool, and a 60-question E2E accuracy harness as the quality bar  ---  the product a reseller can resell.
+\item Tech: FastAPI, Next.js 16, SAP HANA, Docker  ---  github.com/Aryan-Protein-Vala/Cira-RAG-agent
+\end{itemize}
+\textbf{GSTGenius  ---  GST Compliance Suite for Indian CAs (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Shipped a full business vertical product: GST-compliant invoicing (HSN-driven CGST/SGST/IGST), GSTR-1/3B reporting, recurring billing with WhatsApp/email dunning, gateway auto-reconciliation, and a CA portal managing unlimited clients  ---  live at gstgenius-6f0d0.web.app with Razorpay/UPI billing.
+\item Tech: Next.js 15, Firebase, Razorpay  ---  github.com/Aryan-Protein-Vala/GSTGenius
+\end{itemize}
+\textbf{PlusOne  ---  Verified Social Marketplace (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Shipped a consumer two-sided product end to end: discovery, plan hosting with ₹ rates, trust-score verification, real-time chat on booking, safety moderation  ---  edge-hosted in Mumbai; live at findyour-plusone.vercel.app.
+\item Tech: Next.js 15, Supabase  ---  github.com/Aryan-Protein-Vala/PlusOne
+\end{itemize}
+\textbf{Prometheus  ---  Distributed Desktop Tool (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built product + distribution + business: 100\%-offline Rust TUI cleaner, one-line curl installer, HWID licensing, enterprise fleet console, ad-revenue surface, and product site  ---  live at prometheus-cleaner.vercel.app.
+\item Tech: Rust, TUI, Next.js  ---  github.com/Aryan-Protein-Vala/Prometheus
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

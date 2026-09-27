@@ -1,0 +1,88 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Machine Learning Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+ML engineer who ships models to production rather than notebooks: multimodal skin-analysis scoring, RAG retrieval over 9,000+ vectors, NLP pipelines over comment corpora, and the evaluation infrastructure (60-question E2E accuracy harness, 40+ unit tests, per-stage latency telemetry) that keeps ML systems honest. Python-first with PyTorch/TF training backgrounds and Rust/Go when the runtime needs it.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item ML/DL: PyTorch \,·\, TensorFlow \,·\, Scikit-Learn \,·\, NumPy \,·\, Pandas \,·\, scikit-learn vectorizers \,·\, regression/classification/eval
+\item NLP \& LLMs: GPT-4o / GPT-4o-mini / Claude / Llama 3 \,·\, prompt design \,·\, structured outputs \,·\, sentiment \& question extraction \,·\, guardrails
+\item Retrieval: FAISS \,·\, TF-IDF (512-dim) \,·\, BGE embeddings \,·\, hierarchical chunking \,·\, hybrid vector+graph \,·\, citation grounding
+\item MLOps: model evaluation harnesses \,·\, CI gates \,·\, latency benchmarking \,·\, Docker \,·\, PostgreSQL/Supabase \,·\, Redis
+\item Languages: Python \,·\, Rust \,·\, TypeScript \,·\, Go \,·\, SQL
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{DermaOS  ---  Multimodal Skin-Analysis ML Product (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built a multimodal ML pipeline (GPT-4o-mini vision) that scores 6 skin dimensions  ---  oiliness, hydration, acne, texture, elasticity, pigmentation  ---  from a user photo + questionnaire, then outputs a 4-week per-metric improvement forecast rendered as a current-vs-predicted dashboard.
+\item Built the recommendation head: RAG engine ranking 1,300+ catalog products by skin type, concern, and ingredient compatibility, with per-product personalization grades; PDF reports with routines, diet, and lifestyle outputs.
+\item Shipped the product loop: Google OAuth, Razorpay subscriptions + scan credits, INR/USD regional behavior; live at dermaos.vercel.app.
+\item Tech: Next.js 16, Python-style API routes, Supabase, Prisma, OpenRouter (GPT-4o-mini), Razorpay  ---  github.com/Aryan-Protein-Vala/DermaOS
+\end{itemize}
+\textbf{VĀYU  ---  Retrieval ML for Voice RAG}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the retrieval model stack: 512-dim TF-IDF embeddings (sklearn TfidfVectorizer) with a swap-in path to BAAI/bge-small-en-v1.5, FAISS IndexFlatIP over 9,000+ vectors (0.017 ms search), parent-child chunking with 1-sentence overlap, and an LRU similarity cache (<0.2 ms re-query).
+\item Built the quality layer as ML: deterministic guardrails for injection/jailbreak, and a grounding validator that treats hallucination as a measurable, testable failure  ---  every emitted citation must exist in retrieved context.
+\item Measured every stage: 0.67 ms P50 total retrieval; 0.8 ms P50 end-to-end WS round-trip vs a 50–100 ms requirement.
+\item Tech: Python, FAISS, sklearn, FastAPI, Groq LPU, Sarvam AI  ---  github.com/Aryan-Protein-Vala/vayu-voice-rag
+\end{itemize}
+\textbf{CommentLysis  ---  NLP Pipeline over Creator Comments}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built an NLP analysis pipeline (GPT-4o) over YouTube/Instagram comment corpora: sentiment classification, question extraction + clustering/categorization, and content-strategy generation grounded in actual viewer questions; 3 exportable PDF report types (pitch, Q\&A, video ideas) plus a Chrome extension that runs the pipeline in-page.
+\item Tech: Next.js 15, Firebase, GPT-4o, Chrome Extension  ---  github.com/Aryan-Protein-Vala/CommentLysis
+\end{itemize}
+\textbf{B1 Copilot  ---  Measured LLM Generation Quality (SAP)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the evaluation harness that quantifies LLM→SQL accuracy: 60 end-to-end questions executed against a deterministic sandbox, scored into a CI-gated scorecard; plus 40+ unit tests covering "schema search finds columns anywhere", "unknown column rejected with suggestion", "row cap enforced", and dialect translation (HANA→SQLite).
+\item Encoded business semantics as data: \textasciitilde{}80 friendly-name aliases, status-word ↔ B1-code translation, per-table preferred columns, and known date/amount/party column typing for automatic charting.
+\item Tech: Python, FastAPI, SAP HANA, pytest  ---  github.com/Aryan-Protein-Vala/Cira-RAG-agent
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

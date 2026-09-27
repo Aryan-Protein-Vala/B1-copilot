@@ -1,0 +1,88 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Marketplace \& Two-Sided Platform Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+Two-sided platform engineer: built the matching, attribution, trust, and settlement layers for a SaaS affiliate marketplace (founders ↔ sellers), a verified social-activity marketplace with trust scores, and a skincare marketplace where an AI RAG engine is the matching engine over 1,300+ products. Deep in referral attribution, anti-fraud rails, escrow, and liquidity-side UX.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Marketplace Mechanics: two-sided matching \,·\, referral-link attribution \& tracking \,·\, commission models (upfront + recurring) \,·\, escrow \& settlement \,·\, payouts \,·\, demand/supply dashboards
+\item Trust \& Safety: ID + trust-score verification \,·\, self-referral detection \,·\, velocity/fraud checks \,·\, content moderation \,·\, dispute workflows with SLAs
+\item Payments: Razorpay/RazorpayX/UPI \,·\, Stripe \,·\, PayPal \,·\, 14-provider webhook ingestion \,·\, idempotent settlement
+\item Product: Next.js (App Router, Server Actions) \,·\, Supabase (Postgres, RLS, realtime) \,·\, Tailwind \,·\, Framer Motion \,·\, Vercel Edge (ap-south-1)
+\item Languages: TypeScript \,·\, Python \,·\, SQL \,·\, Rust (engine work)
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{Black Index  ---  Affiliate Marketplace for Indian SaaS (31k+ LOC)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed the full two-sided flow: founders list products with hybrid commission config (upfront \% + recurring \% + max recurring months); sellers ("Warlords") browse the marketplace, generate product-specific tracked referral links, and earn on webhook-verified conversions.
+\item Built the attribution + settlement engine: referral endpoints associating traffic with seller+product, HMAC-verified provider webhooks from 14 payment providers feeding an atomic record\_conversion RPC (customer upsert, recurring count, idempotent insert, founder debit, seller escrow credit, platform fee), and a 30-day escrow hold → withdrawable → RazorpayX/UPI payout pipeline.
+\item Built the trust layer: self-referral detection, velocity limits, fraud-report API with dispute evidence upload, blacklist admin tooling, and a dispute SLA cron; seller dashboards for links, transactions, earnings, and pending/withdrawable balances.
+\item Tech: Next.js, Supabase (RLS), Razorpay/Stripe, Zod  ---  github.com/Aryan-Protein-Vala/Black-Index
+\end{itemize}
+\textbf{PlusOne  ---  Verified Social-Activity Marketplace (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the marketplace loop for real-life activities: post a plan with an optional reward, or host an offer at your own ₹/hour rate; instant real-time chat opens on booking confirmation; city + category discovery (Mumbai, Delhi, Bangalore; coffee, movies, study, gaming, travel).
+\item Designed the trust system: ID verification + trust-score badges, automated prohibited-content moderation, and public-venue-only safety policies  ---  the difference between a demo and something people meet up on.
+\item Deployed edge-serverless in ap-south-1 (Mumbai) for India-first latency; live at findyour-plusone.vercel.app.
+\item Tech: Next.js 15, Supabase (Auth SSR, RLS), Tailwind v4  ---  github.com/Aryan-Protein-Vala/PlusOne
+\end{itemize}
+\textbf{DermaOS  ---  AI-Matched Product Marketplace (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the matching engine for a consumer goods marketplace: an RAG recommendation layer ranking 1,300+ products by skin type, concern, and ingredient compatibility, with personalized grades per product card, marketplace filters, and a 4-week outcome forecast that de-risks first purchase.
+\item Built the monetization loop: freemium scan credits, Razorpay subscriptions, INR/USD regional availability  ---  live at dermaos.vercel.app.
+\item Tech: Next.js 16, Supabase, Prisma, OpenRouter, Razorpay  ---  github.com/Aryan-Protein-Vala/DermaOS
+\end{itemize}
+\textbf{GSTGenius  ---  CA-Client Marketplace of Services (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the CA portal: one Chartered Accountant onboards and manages unlimited client businesses with shared access and per-client workspaces  ---  a service marketplace where the CA is the seller and compliance automation is the product.
+\item Tech: Next.js 15, Firebase, Razorpay  ---  github.com/Aryan-Protein-Vala/GSTGenius
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries B2B SaaS Product Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+B2B SaaS engineer who builds the unglamorous middle of enterprise products  ---  multi-tenant RBAC, white-labeling, tiered plans, per-tenant quotas, admin consoles, data migration, and compliance-grade reporting  ---  on top of impressive user-facing AI. Shipped a white-labeled SAP Business One copilot SaaS with 3 admin tiers, a GST compliance suite for CAs, and an enterprise fleet product.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item SaaS Architecture: multi-tenancy (tenant-scoped RBAC, per-tenant quotas \& feature flags) \,·\, white-label theming \,·\, tiered plans (Pilot/Read-Only/Read-Write/Migration) \,·\, partner/reseller models \,·\, admin consoles
+\item Enterprise: SAP Business One (HANA, OData Service Layer) \,·\, data migration \& fuzzy field mapping \,·\, audit trails \,·\, read-only technical users \,·\, guarded SQL
+\item Compliance \& Reporting: GST (CGST/SGST/IGST, HSN codes) \,·\, GSTR-1/3B exports \,·\, P\&L/balance sheet \,·\, signed PDFs
+\item Product: Next.js/React \,·\, FastAPI \,·\, Supabase (RLS, cron) \,·\, Razorpay/Stripe (B2B billing, security deposits) \,·\, Docker \,·\, Vercel/Render
+\item Languages: TypeScript \,·\, Python \,·\, Go \,·\, SQL
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{B1 Copilot  ---  White-Label Multi-Tenant SAP Copilot SaaS}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Upgraded an AI analytics copilot into a tiered B2B SaaS: Super Admin provisions Reseller Partners (plans: Pilot, Read Only, Read/Write Full, Migration), sets tenant quotas, and manages white-label brand names; Partner Admins connect and manage their clients' SAP B1 databases with per-tenant write\_enabled toggles; End Users get the chat copilot.
+\item Built the partner data-migration tool: Excel/CSV upload → difflib fuzzy header mapping (irregular client headers like "Vendor Name" → strict SAP fields like CardName) → validation against the B1 Service Layer → batch push  ---  the boring step that makes enterprise onboarding possible.
+\item Safety architecture for enterprise data: read-only technical HANA user, SELECT-only guarded SQL with parameter binding and row caps, per-employee session scoping, tampered/expired token rejection; 40+ unit tests + 60-question E2E accuracy harness with CI scorecard.
+\item Tech: FastAPI, Next.js 16, SAP HANA, OData, Docker  ---  github.com/Aryan-Protein-Vala/Cira-RAG-agent
+\end{itemize}
+\textbf{GSTGenius  ---  Compliance SaaS for Indian Businesses \& CAs (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the CA-facing product: a dedicated portal where one Chartered Accountant manages unlimited clients with shared access, while each client self-serves invoicing, inventory, and compliance reports.
+\item Shipped the compliance surface: GST-compliant invoicing (CGST/SGST/IGST from HSN + location), one-click GSTR-1 / GSTR-3B exports, real-time P\&L and balance sheets, recurring billing with automated dunning, and gateway auto-reconciliation; live at gstgenius-6f0d0.web.app.
+\item Tech: Next.js 15, Firebase, Razorpay  ---  github.com/Aryan-Protein-Vala/GSTGenius
+\end{itemize}
+\textbf{Black Index  ---  Founder-Side B2B Marketplace Platform}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the SaaS vendor side of a distribution marketplace: product listings with hybrid commission config (upfront \% + recurring \% + max months), payment/webhook integration setup per provider, featured-listing payments, security deposits, and a founder dashboard with analytics, wallet, and product management.
+\item Tech: Next.js, Supabase, Razorpay/Stripe  ---  github.com/Aryan-Protein-Vala/Black-Index
+\end{itemize}
+\textbf{Prometheus  ---  Enterprise Fleet Security Product (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built a B2B-distributable OS cleaner: 100\% offline Rust TUI (zero telemetry as the selling point), HWID-bound license keys to prevent license burnout, a centralized Enterprise Fleet Command Center for organizational management, and a one-line curl installer across macOS/Linux  ---  live at prometheus-cleaner.vercel.app.
+\item Tech: Rust, TUI, Next.js, GitHub Actions  ---  github.com/Aryan-Protein-Vala/Prometheus
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

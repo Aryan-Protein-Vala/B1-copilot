@@ -1,0 +1,77 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Cryptography \& Secure Systems Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+Applied cryptography and secure-systems engineer: designed the full crypto pipeline for an offline P2P payment mesh (Secure Enclave/Keystore P-256 keys, Noise-protocol ECDH, ChaCha20-Poly1305 AEAD, ECDSA non-repudiation, Bloom-filter replay defense), hardware-accelerated E2EE file transfer (PBKDF2 → AES-256-GCM over QUIC), and local-first systems where the security model is "nothing leaves the device.".
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Cryptography: P-256 (secp256r1) ECDH \,·\, ChaCha20-Poly1305 AEAD \,·\, AES-256-GCM \,·\, PBKDF2 KDF \,·\, HKDF-SHA256 \,·\, ECDSA-SHA256 signatures \,·\, Noise Protocol Framework \,·\, hardware SHA-256 (SHA-NI) \,·\, Bloom filters (replay defense)
+\item Key Management: iOS Secure Enclave \,·\, Android Hardware Keystore \,·\, hardware-UUID license binding \,·\, edge-side key injection (keys never reach the client)
+\item Secure Architecture: E2EE designs \,·\, non-repudiation \,·\, replay-attack prevention \,·\, timing-safe comparisons \,·\, HMAC webhook verification \,·\, RLS \,·\, secret detection \,·\, tamper/expired token rejection \,·\, air-gapped (zero-telemetry) products
+\item Platforms: Rust \,·\, Go \,·\, Swift \,·\, Kotlin \,·\, Python \,·\, BLE GATT (secure transport) \,·\, QUIC
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{Astral  ---  Offline P2P Payment Mesh Crypto Pipeline}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed the complete on-device crypto pipeline for a payment mesh with zero connectivity: P-256 keypair generation and storage in iOS Secure Enclave / Android Hardware Keystore, Noise-protocol handshake (ephemeral P-256 ECDH + HKDF-SHA256 key derivation), ChaCha20-Poly1305 AEAD payload encryption, and ECDSA-SHA256 sender signatures giving every transaction non-repudiation.
+\item Solved the replay-attack problem unique to delayed delivery: Bloom-filter/hash tracking dedupes on the transaction ID hash (not ciphertext  ---  which differs per ephemeral key), so offline replay attempts are rejected at reconciliation.
+\item Tech: Rust, Swift, Kotlin, UniFFI, BLE GATT, Noise Protocol, P-256, ChaCha20-Poly1305  ---  github.com/Aryan-Protein-Vala/Astral-Offline \,·\, github.com/Aryan-Protein-Vala/Astral-Network
+\end{itemize}
+\textbf{Aether  ---  E2EE Transfer Engine with Hardware Crypto (Go)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the encryption layer for WAN transfers: PBKDF2 key derivation from a user passphrase into AES-256-GCM, with authentication tagging (a single flipped bit is detected and dropped) and per-16MB-chunk key independence  ---  any chunk can be re-verified or resumed without restarting the transfer.
+\item Tech: Go, AES-256-GCM, PBKDF2, QUIC  ---  github.com/Aryan-Protein-Vala/AetherNet
+\end{itemize}
+\textbf{B1 Copilot  ---  Auth \& Integrity for an Enterprise Copilot}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the security test matrix for an app holding customer ERP access: forged-unsigned, tampered, and expired token rejection; cross-employee session-hijack blocking; read-only technical DB user and SELECT-only guarded SQL as defense-in-depth.
+\item Tech: Python, FastAPI, pytest, JWT  ---  github.com/Aryan-Protein-Vala/Cira-RAG-agent
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}

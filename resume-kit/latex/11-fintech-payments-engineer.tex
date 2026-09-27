@@ -1,0 +1,85 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper,margin=0.55in,top=0.5in,bottom=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\definecolor{accent}{HTML}{1A1A2E}
+\definecolor{greyc}{HTML}{444444}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries\color{accent}}{}{0em}{}[{\color{accent}\titlerule[0.7pt]}]
+\titlespacing*{\section}{0pt}{7pt}{2.5pt}
+\begin{document}
+
+\noindent{\LARGE\bfseries\color{accent} ARYAN SHARMA}\\[3pt]
+{\large\bfseries Fintech \& Payments Engineer}\\[3pt]
+{\small\color{greyc} Ghaziabad, India \,·\, +91 93154 65182 \,·\, aryansharma24112003@gmail.com}\vspace{-2pt}
+{\small\color{greyc} github.com/Aryan-Protein-Vala \,·\, linkedin.com/in/aryannnn \,·\, aryannnn-portfolio.vercel.app}\vspace{-2pt}
+\section*{SUMMARY}
+Payments and fintech systems engineer: built the full money path for a two-sided SaaS marketplace (14 provider webhooks → atomic settlement RPC → 30-day escrow → UPI payouts), a prepaid-credit wallet for an AI platform, GST-compliant invoicing with gateway auto-reconciliation, and an offline P2P payment mesh where every transaction is E2E-encrypted and non-repudiable over Bluetooth. Obsessed with idempotency, replay defense, and reconciliation.
+\vspace{1pt}
+\section*{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Payments: Razorpay (orders, webhooks, RazorpayX/UPI payouts, security deposits) \,·\, Stripe \,·\, PayPal \,·\, Gumroad \,·\, Cashfree \,·\, PhonePe \,·\, PayU \,·\, Instamojo \,·\, CCAvenue \,·\, Shopify \,·\, Lemon Squeezy \,·\, webhooks \& provider event modeling
+\item Ledger \& Settlement: atomic conversion/settlement RPCs \,·\, idempotent transaction keys \,·\, escrow \& pending/withdrawable balances \,·\, recurring commission accounting \,·\, 30-day settlement holds \,·\, reconciliation crons \,·\, refund/chargeback handling
+\item Security: HMAC webhook verification \,·\, timing-safe comparisons \,·\, self-referral \& velocity checks \,·\, replay defense (Bloom filters) \,·\, RLS \,·\, signed transactions (ECDSA)
+\item Fintech Domains: GST/HSN tax logic \,·\, GSTR-1/3B reporting \,·\, invoicing \& dunning \,·\, wallet accounting \,·\, KYC-adjacent onboarding
+\item Languages: TypeScript \,·\, Python \,·\, Rust \,·\, Swift/Kotlin (payments SDKs) \,·\, PostgreSQL/Supabase, Firebase
+\end{itemize}
+\section*{EXPERIENCE}
+\textbf{Cinntra Infotech  ---  Systems Engineer} \,·\, 2026 – Present
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built CIRA, a RAG agent translating natural-language requests into audited SAP HANA queries and write operations, giving non-technical users direct access to enterprise data
+\item Built the point-of-sale system backend: transaction recording, merchant reconciliation, and offline synchronization
+\end{itemize}
+\textbf{Niswa Engineering  ---  Technical Consultant \& Automation Engineer} \,·\, 2024 – 2026
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built asynchronous AI agents (TypeScript) that automated 80\%+ of a content generation and scheduling pipeline
+\item Built the company website in Astro (95+ Google Lighthouse score); set up cloud infrastructure, API integrations, and event-driven automation workflows
+\end{itemize}
+\textbf{Sudarshana Foundation  ---  Full-Stack \& Automation Engineer} \,·\, Contract
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Designed and built the organization's first centralized web platform, digitizing paper-based workflows into software
+\item Built database systems handling 5,000+ monthly transactions
+\end{itemize}
+\section*{PROJECTS}
+\textbf{Black Index  ---  Marketplace Money Path (31k+ LOC)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the settlement engine: HMAC-verified webhooks from 14 payment providers (Razorpay, Stripe, Gumroad, Lemon Squeezy, PayPal, Cashfree, PhonePe, PayU, Instamojo, CCAvenue, Shopify, Cal.com, +custom) feed an atomic record\_conversion RPC  ---  customer upsert, recurring-billing count, idempotent transaction insert, founder wallet debit, seller escrow credit, and platform-fee accounting (2–5\% model) in one transaction.
+\item Implemented the risk controls: 30-day escrow hold, cron-driven release after refund/chargeback/dispute windows, reconciliation + wallet-check crons, self-referral detection, velocity limits, timing-safe secret comparison, server-side-only money operations, and RLS on every table; seller payouts via RazorpayX/UPI.
+\item Tech: Next.js, Supabase/Postgres, Razorpay/Stripe, Zod  ---  github.com/Aryan-Protein-Vala/Black-Index
+\end{itemize}
+\textbf{Astral  ---  Offline P2P Payment Mesh over BLE}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built a payment mesh that works with zero connectivity: encrypted payment packets (200–500 B) exchange over BLE between phones and reconcile to a backend ledger when either device reconnects.
+\item Implemented the crypto that makes it non-repudiable: P-256 keypairs in iOS Secure Enclave / Android Keystore, Noise-protocol ECDH + HKDF-SHA256 key derivation, ChaCha20-Poly1305 AEAD payloads, ECDSA-SHA256 signature per transaction, and Bloom-filter deduplication of transaction hashes (not ciphertext) that blocks offline replay attacks.
+\item Tech: Rust, Swift, Kotlin, UniFFI, BLE/GATT, Noise Protocol  ---  github.com/Aryan-Protein-Vala/Astral-Offline \,·\, github.com/Aryan-Protein-Vala/Astral-Network
+\end{itemize}
+\textbf{GSTGenius  ---  GST-Compliant Billing Suite (live)}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the tax engine: automatic CGST/SGST/IGST computation from HSN codes + transaction location, GST-compliant invoices with digital signatures and brand logos, and one-click GSTR-1 / GSTR-3B exports in CSV/Excel.
+\item Tech: Next.js 15, Firebase, Razorpay, jsPDF  ---  github.com/Aryan-Protein-Vala/GSTGenius
+\end{itemize}
+\textbf{Council  ---  Prepaid Credit Wallet for AI}
+\vspace{1pt}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Built the wallet backend: integer-credit ledger with typed transactions (deposit/usage/refund/bonus), Razorpay UPI top-ups with webhook-verified settlement, and tier gating that controls limits without recurring billing.
+\item Tech: Next.js, Supabase, Clerk, Razorpay  ---  github.com/Aryan-Protein-Vala/multi-model
+\end{itemize}
+\section*{CERTIFICATIONS}
+\begin{itemize}[leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt]
+\item Frontend Development Certification  ---  Sheryians Coding School
+\item Data Science \& AI/ML Bootcamp Certification  ---  Udemy
+\end{itemize}
+\end{document}
